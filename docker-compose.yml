@@ -1,0 +1,28 @@
+services:
+  expo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: echo-client
+
+    working_dir: /echo-client
+
+    volumes:
+      - .:/echo-client
+      - /echo-client/node_modules
+
+    ports:
+      - "8081:8081"
+
+    stdin_open: true
+    tty: true
+
+    environment:
+      - EXPO_DEVTOOLS_LISTEN_ADDRESS=0.0.0.0
+      - REACT_NATIVE_PACKAGER_HOSTNAME=127.0.0.1
+      - EXPO_PACKAGER_PROXY_URL=http://127.0.0.1:8081
+
+    command: >
+      sh -c "npm install --save-dev react-native-clean-project @react-native-community/cli --legacy-peer-deps &&
+             npx expo start --host lan"
