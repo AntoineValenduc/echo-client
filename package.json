@@ -31,7 +31,9 @@
     "@react-native-community/cli": "^20.2.0",
     "@types/react": "~19.2.2",
     "react-native-clean-project": "^4.0.3",
-    "typescript": "~6.0.3"
+    "typescript": "~6.0.3",
+    "eslint": "^9.25.0",
+    "eslint-config-expo": "~10.0.0"
   },
   "scripts": {
     "start": "expo start",
