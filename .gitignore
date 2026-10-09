@@ -41,3 +41,7 @@ example
 # generated native folders
 /ios
 /android
+
+# local env files (ajoute par l'audit socle exploitation)
+.env
+!.env.example
